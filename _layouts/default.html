@@ -4,7 +4,7 @@
 {% include head.html %}
 
 <!-- hack iOS CSS :active style -->
-<body ontouchstart="">
+<body ontouchstart="" class="{% if page.title == '大大帅 | AI 与技术实践者' %}resume-home{% endif %}">
 
     {% include nav.html %}
 

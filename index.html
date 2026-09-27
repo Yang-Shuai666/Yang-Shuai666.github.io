@@ -1,42 +1,67 @@
 ---
-layout: page
-description: "Thinking will not overcome fear but action will."
+layout: default
+title: "大大帅 | AI 与技术实践者"
+description: "专注 AI、工程实践与持续学习"
 ---
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
+<main class="resume-page">
+    <section class="resume-hero">
+        <div class="resume-hero__content">
+            <p class="resume-kicker">AI · ENGINEERING · LEARNING</p>
+            <h1>你好，我是<br><span>大大帅（YS）</span></h1>
+            <p class="resume-lead">一个对 AI 和技术充满热情的实践者，喜欢把新想法做成真实可用的东西。</p>
+            <div class="resume-actions">
+                <a class="resume-button resume-button--primary" href="#contact">联系我</a>
+                <a class="resume-button resume-button--quiet" href="{{ site.baseurl }}/about/">了解更多 <span aria-hidden="true">↗</span></a>
+            </div>
         </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
-{% endfor %}
+        <div class="resume-hero__aside">
+            <div class="resume-avatar-frame">
+                <img src="{{ site.baseurl }}{{ site.sidebar-avatar }}" alt="大大帅的头像">
+            </div>
+            <p class="resume-availability"><span></span>持续探索与创造中</p>
+        </div>
+    </section>
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+    <section class="resume-section resume-intro" id="about">
+        <div class="resume-section__label">01 / ABOUT</div>
+        <div>
+            <h2>让思考落地，<em>让行动产生答案。</em></h2>
+            <p>我热爱学习，喜欢探索新技术，也喜欢通过写作分享自己的所思所想。目前关注人工智能、开发工具与个人效率，希望在持续实践中构建有价值的作品。</p>
+        </div>
+    </section>
+
+    <section class="resume-section" id="focus">
+        <div class="resume-section__label">02 / FOCUS</div>
+        <div class="resume-grid">
+            <article class="resume-card">
+                <span class="resume-card__index">01</span>
+                <h3>AI 与技术探索</h3>
+                <p>关注 AI 应用、智能工具和新技术趋势，把好奇心转化为可以验证的实践。</p>
+            </article>
+            <article class="resume-card">
+                <span class="resume-card__index">02</span>
+                <h3>工程与产品实现</h3>
+                <p>重视清晰的结构、稳定的体验和可持续迭代，让想法真正被使用。</p>
+            </article>
+            <article class="resume-card">
+                <span class="resume-card__index">03</span>
+                <h3>写作与持续学习</h3>
+                <p>记录学习过程，整理问题与答案，在输出中沉淀自己的知识体系。</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="resume-section resume-links" id="contact">
+        <div class="resume-section__label">03 / CONNECT</div>
+        <div>
+            <h2>保持联系</h2>
+            <p>欢迎交流技术、AI、个人成长，或者任何值得认真聊聊的新想法。</p>
+            <div class="resume-contact-list">
+                <a href="mailto:{{ site.email }}"><span>邮箱</span>{{ site.email }} <b aria-hidden="true">↗</b></a>
+                <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer"><span>GitHub</span>@{{ site.github_username }} <b aria-hidden="true">↗</b></a>
+                <a href="{{ site.baseurl }}/about/"><span>更多信息</span>关于我 <b aria-hidden="true">↗</b></a>
+            </div>
+        </div>
+    </section>
+</main>
